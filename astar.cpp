@@ -180,7 +180,6 @@ void PrintBoard(const vector<vector<State>> board) {
   }
 }
 
-#include "test.cpp"
 
 int main() {
   int init[2]{0, 0};
