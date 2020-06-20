@@ -5,7 +5,7 @@ using namespace std;
 class LRUCache {
     int size_;
     unordered_map<int, int> ma;
-    list<int> lst;
+    deque<int> lst;
 public:
     LRUCache(int capacity) : size_(capacity) {
         ma.clear();
@@ -19,7 +19,7 @@ public:
         }
         //found
         else {
-            list<int>::iterator it = lst.begin();
+            deque<int>::iterator it = lst.begin();
             while (*it != key) {
                 it++;
             }
@@ -32,7 +32,7 @@ public:
     void put(int key, int value) {
         //found
         if (ma.find(key)!= ma.end()) {
-            list<int>::iterator it = lst.begin();
+            deque<int>::iterator it = lst.begin();
             while (*it != key) {
                 it++;
             }
